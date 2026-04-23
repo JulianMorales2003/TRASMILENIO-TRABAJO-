@@ -29,14 +29,16 @@ El sistema está compuesto por las siguientes clases:
 - *Troncal* — nombre, velocidad promedio (metros/minuto) y estaciones que la conforman.
 - *SistemaTransmilenio* — clase principal que agrega y coordina rutas, troncales y estaciones, y expone los servicios del sistema.
 
+ 
 ## ⚙️ Servicios implementados
  
 ### Servicio 1 — Tiempo de espera de una estación
 ```java
 int getTiempoEspera(String nombreEstacion) throws TransmilenioException
 ```
-Dado el nombre de una estación, retorna su tiempo de espera en minutos.  
-Lanza `TransmilenioException` si la estación no existe en el sistema.
+Dado el nombre de una estación, retorna su tiempo de espera en minutos.
+ 
+Cada estación tiene un nivel de ocupación (alto, medio o bajo) al que le corresponde un tiempo de espera definido al momento de crearla. Este servicio simplemente consulta ese valor directamente desde el objeto `Estacion`. Si el nombre ingresado no corresponde a ninguna estación registrada en el sistema, se lanza una `TransmilenioException` con un mensaje descriptivo.
  
 ---
  
@@ -45,6 +47,8 @@ Lanza `TransmilenioException` si la estación no existe en el sistema.
 List<String> getRutasOrdenadas()
 ```
 Retorna los nombres de todas las rutas del sistema ordenados alfabéticamente.
+ 
+El sistema mantiene internamente una lista de objetos `Ruta`. Este servicio extrae los nombres de todas ellas, los almacena en una nueva lista y aplica `Collections.sort()` para ordenarlas. El resultado es una lista de `String` lista para mostrar al usuario. No lanza excepción porque si no hay rutas simplemente retorna una lista vacía.
  
 ---
  
@@ -55,10 +59,9 @@ List<String> getRutasDirectas(String nombreInicio, String nombreFin) throws Tran
 Dado el nombre de dos estaciones, retorna las rutas que permiten ir de una a otra **sin transbordos**, ordenadas:
 1. De menor a mayor por número de paradas.
 2. Alfabéticamente por nombre de ruta en caso de empate.
-Lanza `TransmilenioException` si alguna de las dos estaciones no existe.
- 
----
+El servicio primero valida que ambas estaciones existan en el sistema, lanzando `TransmilenioException` en caso contrario. Luego filtra las rutas que contienen ambas estaciones. Para cada ruta candidata se calcula el número de paradas entre las dos estaciones buscando sus posiciones en la lista y calculando la diferencia de índices. Finalmente se ordena el resultado usando un `Comparator` compuesto que aplica primero el criterio de paradas y luego el alfabético.
 
+---
 ## 🗂️ Decisiones de diseño
  
 | Colección | Uso | Justificación |
