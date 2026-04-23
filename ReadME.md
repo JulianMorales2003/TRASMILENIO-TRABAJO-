@@ -58,3 +58,13 @@ Dado el nombre de dos estaciones, retorna las rutas que permiten ir de una a otr
 Lanza `TransmilenioException` si alguna de las dos estaciones no existe.
  
 ---
+
+## 🗂️ Decisiones de diseño
+ 
+| Colección | Uso | Justificación |
+|---|---|---|
+| HashMap<String, Estacion> | Estaciones en SistemaTransmilenio | Búsqueda O(1) por nombre — el enunciado indica que estas son consultas muy frecuentes |
+| ArrayList<Ruta> | Rutas en SistemaTransmilenio | Permite iterar y ordenar con Collections.sort / Comparator |
+| ArrayList<Estacion> | Estaciones dentro de cada Ruta y Troncal | El orden importa (define la secuencia de paradas), y se necesita acceso por índice para contar paradas |
+ 
+---
