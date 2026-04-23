@@ -68,3 +68,14 @@ Lanza `TransmilenioException` si alguna de las dos estaciones no existe.
 | ArrayList<Estacion> | Estaciones dentro de cada Ruta y Troncal | El orden importa (define la secuencia de paradas), y se necesita acceso por índice para contar paradas |
  
 ---
+
+## 🚧 Métodos pendientes de implementación
+ 
+Los siguientes métodos están declarados en `SistemaTransmilenio` pero aún no implementados, ya que corresponden a servicios que serán desarrollados en las siguientes sesiones del trabajo:
+ 
+| Método | Servicio |
+|---|---|
+| `importarRutas(String archivo)` | Persistencia — importar ruta desde archivo de texto |
+| `exportarRutas(String archivo)` | Persistencia — exportar rutas directas a archivo de texto |
+ 
+Adicionalmente, los servicios 3, 5 y 6 del enunciado número de paradas por ruta dada, rutas con transbordo y tiempo de recorrido de un plan no forman parte de los puntos acordados en clase.
