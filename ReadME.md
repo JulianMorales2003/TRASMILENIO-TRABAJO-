@@ -89,4 +89,3 @@ Los siguientes métodos están declarados en `SistemaTransmilenio` pero aún no 
 | `importarRutas(String archivo)` | Persistencia — importar ruta desde archivo de texto |
 | `exportarRutas(String archivo)` | Persistencia — exportar rutas directas a archivo de texto |
  
-Adicionalmente, los servicios 3, 5 y 6 del enunciado número de paradas por ruta dada, rutas con transbordo y tiempo de recorrido de un plan no forman parte de los puntos acordados en clase.
