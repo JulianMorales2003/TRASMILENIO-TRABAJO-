@@ -11,7 +11,7 @@ Escuela Colombiana de Ingeniería Julio Garavito · 2026-1
 |---|---|
 | Julian Morales | @JulianMorales2003 |
 | Sergio Buitrago | @sergiobuitragos |
-| Jhonatan Peña Mora | @jhonatanpenamora- |
+| Jhonatan Peña Mora | @jhonatanpenamora-png |
  
 ---
  
