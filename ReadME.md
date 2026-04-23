@@ -69,6 +69,14 @@ Lanza `TransmilenioException` si alguna de las dos estaciones no existe.
  
 ---
 
+## 📝 Conclusiones
+ 
+- El diseño del sistema se basó en el diagrama de clases elaborado en clase, respetando las relaciones y responsabilidades definidas en el modelo UML.
+- Se priorizó el uso de colecciones adecuadas para cada caso: HashMap para búsquedas rápidas por nombre de estación y ArrayList donde el orden secuencial de las paradas es relevante.
+- Se incluyó una clase Main con el único propósito de probar las funcionalidades implementadas durante el desarrollo. Esta clase *no es parte del sistema* y no es necesaria para el funcionamiento del proyecto; se conserva en el repositorio únicamente como evidencia de las pruebas realizadas.
+- El manejo de errores se centralizó en TransmilenioException, siguiendo las buenas prácticas de diseño orientado a objetos vistas en el curso.
+---
+
 ## 🚧 Métodos pendientes de implementación
  
 Los siguientes métodos están declarados en `SistemaTransmilenio` pero aún no implementados, ya que corresponden a servicios que serán desarrollados en las siguientes sesiones del trabajo:
